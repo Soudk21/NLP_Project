@@ -1,4 +1,4 @@
-# NLP_Project
+# SemEval-Task 2
 
-Project discrition 
-setup intruction
+Project decription:
+
