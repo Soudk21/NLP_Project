@@ -6,7 +6,7 @@
 
 The **Pytorch version of our SemEval-2026 Task 2 submissions** is found within this repository and addresses three major issues in affective computing: **state prediction**, **change forecasting** and **long-term trajectory prediction**.
 
-We utilize efficient "hybrid" architectures; specifically **the Siamese Network ("Bifurcated Leviathan")**, and custom **loss functions (CC (Concordance Correlation Coefficient))** to prevent regression to the mean, due to **resource limitations associated with consumer-grade hardware (8GB VRAM)**.
+We utilize efficient "hybrid" architectures; specifically **the Siamese Network ("Bifurcated Leviathan")**, and custom **loss functions (CCC (Concordance Correlation Coefficient))** to prevent regression to the mean, due to **resource limitations associated with consumer-grade hardware (8GB VRAM)**.
 
 
 ---
