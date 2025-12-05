@@ -14,18 +14,22 @@ We utilize efficient "hybrid" architectures; specifically **the Siamese Network 
 ## 📂 Repository Structure
 
 ```bash
-├── data/
-│   ├── train_subtask1.csv       # Raw longitudinal user data
-│   ├── train_subtask2a.csv      # State-transition data
-│   └── train_subtask2b.csv      # Long-term history data
-├── notebooks/
-│   ├── subtask1.ipynb           # Hybrid DistilBERT + LSTM (Validation: Sliding Window)
-│   ├── subtask2a.ipynb          # DeBERTa + Projection MLP + CCC Loss
-│   └── subtask2b.ipynb          # Bifurcated Siamese "Leviathan" Model
+├── data/                        # Place your dataset files here (exactly as downloaded)
+│   ├── train_subtask1.csv       
+│   ├── train_subtask2a.csv      
+│   ├── train_subtask2b.csv      # Main aggregated file used by our Subtask 2B model
+│   ├── train_subtask2b_detailed.csv
+│   └── train_subtask2b_user_disposition_change.csv
+├── src/                         # Source code for training and inference
+│   ├── subtask1_longitudinal.py 
+│   ├── subtask2a_forecasting.py 
+│   └── subtask2b_disposition.py # Handles the list-parsing from train_subtask2b.csv
+├── splits_subtask1/             # Generated automatically by the scripts
+├── splits_subtask2a/
+├── splits_subtask2b/
 ├── predictions/                 # Output CSVs for submission
 ├── README.md                    # Project documentation
 └── requirements.txt             # Python dependencies
-```
 
 ---
 
@@ -97,7 +101,7 @@ git clone [https://github.com/YourUsername/SemEval-2026-Task2.git](https://githu
 cd SemEval-2026-Task2
 
 # Install dependencies
-pip install torch transformers pandas numpy scipy scikit-learn tqdm
+pip install -r requirements.txt
 ```
 
 ### Running the Subtasks
